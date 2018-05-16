@@ -192,9 +192,9 @@ for e in range(NUM_EPOCHS):
 		test_loss_=sess.run(test_loss)
 		test_loss_list.append(test_loss_)
 		print 'epoch {},{}batches,test loss :{:.4f}'.format(e,jj,test_loss_)
-	print 'epoch {}, average value for testing loss is {.4f}'.format(e,np.mean(test_loss_list))
+	print 'epoch {}, average value for testing loss is {:.4f}'.format(e,np.mean(test_loss_list))
 	logfile=open('log.txt','a')
-	logfile.write('epoch {}, average value for testing loss is {.4f}'.format(e,np.mean(test_loss_list)))
+	logfile.write('epoch {}, average value for testing loss is {:.4f}'.format(e,np.mean(test_loss_list)))
 	logfile.close()
 
 
