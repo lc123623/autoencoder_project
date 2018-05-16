@@ -132,8 +132,8 @@ train_loss=tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=train_l
 optimizer=tf.train.AdamOptimizer(0.001).minimize(train_loss)
 
 tf.get_variable_scope().reuse_variables()
-test_z=encode(test_data)
-test_logits=decode(test_z)
+test_z,_=encode(test_data)
+test_logits,_=decode(test_z)
 test_loss=tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=test_label,logits=test_logits))
 	
 tf.summary.scalar('train_loss',train_loss)
